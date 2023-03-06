@@ -1,9 +1,9 @@
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.wrapper{
+.wrapper {
   height: 400px;
   width: 700px;
   position: relative;
@@ -23,13 +23,21 @@ body{
   border-radius: 20px;
   box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  overflow:hidden;
+  overflow: hidden;
 }
-.front{
+.card p{
+  z-index: 10;
+}
+.front {
   height: 100%;
   width: 100%;
   border-radius: 20px;
-  background: linear-gradient(148deg, rgba(124,119,119,1) 0%, rgba(99,99,99,0.6180847338935574) 36%, rgba(170,169,169,1) 100%);
+  background: linear-gradient(
+    148deg,
+    rgba(124, 119, 119, 1) 0%,
+    rgba(99, 99, 99, 0.6180847338935574) 36%,
+    rgba(170, 169, 169, 1) 100%
+  );
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -37,9 +45,45 @@ body{
   gap: 30px;
   padding-left: 60px;
   color: #fff;
-  text-shadow: 1px 0 3px #000;
+  text-shadow: 2px 2px 3px #000;
 }
-.back{
+.front::before {
+  content: "";
+  display: block;
+  top: -30%;
+  left: 70%;
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(255, 25, 25, 0.4);
+}
+.front::after {
+  content: "";
+  display: block;
+  bottom: -40%;
+  left: 40%;
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(209, 189, 3, 0.4);
+}
+.orders,
+.decreasing {
+  font-size: 2rem;
+}
+.amount {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+.icon {
+  position: absolute;
+  left: 80%;
+  top: 10%;
+  font-size: 60px;
+}
+.back {
   height: 100%;
   width: 100%;
   background: #b3b6b0;
@@ -47,7 +91,7 @@ body{
   position: absolute;
   transform: rotateY(180deg) perspective(500px);
 }
-.line{
+.line {
   height: 40px;
   width: 100%;
   position: absolute;
@@ -59,81 +103,9 @@ body{
   justify-content: flex-end;
   padding-right: 50px;
 }
-.front::before{
-  content: "";
-  display: block;
-  top: -30%;
-  left: 70%;
-  height: 450px;
-  width: 450px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba(255, 25, 25 , 0.4);
-  animation: 10s bg_color_before linear infinite ;
-}
-.front::after{
-  content: "";
-  display: block;
-  bottom: -40%;
-  left: 40%;
-  height: 450px;
-  width: 450px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba(209, 189, 3, 0.4);
-  animation: 20s bg_color_after linear infinite;
-  
-}
-.orders , .decreasing{
-  font-size: 2rem;
-}
-.amount{
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-.icon{
-  position: absolute;
-  left: 80%;
-  top: 10%;
-  font-size: 60px;
-}
 .wrapper:hover .front {
   transform: rotateY(180deg) perspective(500px);
 }
 .wrapper:hover .back {
   transform: rotateY(360deg) perspective(500px);
-}
-@keyframes bg_color_before{
- 0%{
-  background-color: rgba(255, 25, 25 , 0.4);
- }
- 25%{
-  background-color: rgba(247, 204, 16, 0.4);
- }
- 50%{
-  background-color: rgba(62, 218, 14, 0.4);
- }
- 75%{
-  background-color: rgba(21, 224, 224, 0.4);
- }
- 100%{
-  background-color: rgba(255, 25, 25 , 0.4);
- }
-}
-@keyframes bg_color_after{
- 0%{
-  background-color: rgba(209, 189, 3, 0.4);
- }
- 25%{
-  background-color: rgba(223, 189, 39, 0.4);
- }
- 50%{
-  background-color: rgba(62, 218, 14, 0.637);
- }
- 75%{
-  background-color: rgba(30, 150, 150, 0.4);
- }
- 100%{
-  background-color: rgba(209, 189, 3, 0.4);
- }
 }

@@ -71,15 +71,15 @@ body {
   z-index: 10;
 }
 .chip{
-  height: 200px;
-  width: 230px;
+  height: 140px;
+  width: 170px;
 }
 .nft_symbol{
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 90px;
   position: absolute;
-  top: 115px;
-  left: 230px;
+  top: 107px;
+  left: 210px;
 }
 .master_card{
   height: 120px;
